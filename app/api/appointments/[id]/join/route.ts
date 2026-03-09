@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addParticipant } from "@/lib/sheets";
-import { sendJoinNotification } from "@/lib/email";
 
 export async function POST(
   req: NextRequest,
@@ -19,12 +18,6 @@ export async function POST(
     }
 
     const appointment = await addParticipant(id, nickname.trim());
-
-    // Fire notification — don't await so it doesn't slow the response
-    sendJoinNotification(appointment, nickname.trim()).catch((err) =>
-      console.error("Email notification failed:", err)
-    );
-
     return NextResponse.json(appointment);
   } catch (error) {
     const message =
