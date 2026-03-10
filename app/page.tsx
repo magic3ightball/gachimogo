@@ -23,6 +23,19 @@ export default async function HomePage() {
         <h1 className="text-2xl font-bold text-gray-900">오늘 같이 밥 먹을 사람을 찾아보세요</h1>
       </div>
 
+      <a
+        href="https://open.kakao.com/o/sSgGxFki"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-between gap-3 bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 mb-5 hover:bg-yellow-100 transition-colors"
+      >
+        <div className="flex items-center gap-2 text-sm text-yellow-800">
+          <span>💬</span>
+          <span>불편한 점이나 건의사항이 있으면 편하게 알려주세요!</span>
+        </div>
+        <span className="text-xs text-yellow-600 font-medium shrink-0">피드백 보내기 →</span>
+      </a>
+
       {fetchError ? (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-600">
           {fetchError}
