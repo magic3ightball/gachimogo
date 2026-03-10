@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gachimogo | 같이먹어",
+  title: "Gachimogo | 가치모고",
   description: "Apple Developer Academy @ POSTECH 같이 먹을 사람 찾기",
   icons: {
     icon: "/favicon.png",
