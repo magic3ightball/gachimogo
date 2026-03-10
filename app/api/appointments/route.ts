@@ -34,6 +34,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (new Date(datetime) < new Date()) {
+      return NextResponse.json(
+        { error: "이미 지난 시간으로는 약속을 만들 수 없어요" },
+        { status: 400 }
+      );
+    }
+
     if (kakao_open_chat && !kakao_open_chat.startsWith("https://open.kakao.com/")) {
       return NextResponse.json(
         { error: "카카오톡 오픈채팅 링크가 올바르지 않아요 (https://open.kakao.com/ 으로 시작해야 해요)" },
