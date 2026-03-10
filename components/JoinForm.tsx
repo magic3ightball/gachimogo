@@ -37,7 +37,7 @@ export default function JoinForm({ appointmentId }: { appointmentId: string }) {
   if (joined) {
     return (
       <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-sm text-green-700 font-medium">
-        ✅ 참여 완료! 카카오 오픈채팅으로 호스트와 연락해보세요.
+        ✅ 참여 완료!
       </div>
     );
   }
