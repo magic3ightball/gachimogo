@@ -33,7 +33,7 @@ export default function CreatePage() {
       title: (form.elements.namedItem("title") as HTMLInputElement).value,
       host: (form.elements.namedItem("host") as HTMLInputElement).value,
       location: (form.elements.namedItem("location") as HTMLInputElement).value,
-      datetime: (form.elements.namedItem("datetime") as HTMLInputElement).value,
+      datetime: new Date((form.elements.namedItem("datetime") as HTMLInputElement).value).toISOString(),
       max_people: (form.elements.namedItem("max_people") as HTMLInputElement).value,
       notes: (form.elements.namedItem("notes") as HTMLTextAreaElement).value,
       kakao_open_chat: (form.elements.namedItem("kakao_open_chat") as HTMLInputElement).value,
