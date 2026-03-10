@@ -40,7 +40,7 @@ export default async function AppointmentDetailPage({
 
   const disabledReason =
     status === "FULL" ? "이미 인원이 꽉 찼어요."
-    : status === "PAST" ? "이미 지난 약속이에요."
+    : status === "PAST" ? "약속 시간이 지났어요."
     : null;
 
   return (
