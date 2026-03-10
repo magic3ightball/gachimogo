@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function JoinForm({ appointmentId }: { appointmentId: string }) {
-  const router = useRouter();
   const [nickname, setNickname] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [joined, setJoined] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -26,13 +25,21 @@ export default function JoinForm({ appointmentId }: { appointmentId: string }) {
       if (!res.ok) {
         setError(data.error ?? "참여에 실패했습니다");
       } else {
-        router.refresh();
+        setJoined(true);
       }
     } catch {
       setError("네트워크 오류가 발생했습니다. 다시 시도해주세요.");
     } finally {
       setLoading(false);
     }
+  }
+
+  if (joined) {
+    return (
+      <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-sm text-green-700 font-medium">
+        ✅ 참여 완료! 카카오 오픈채팅으로 호스트와 연락해보세요.
+      </div>
+    );
   }
 
   return (
