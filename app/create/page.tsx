@@ -108,11 +108,7 @@ export default function CreatePage() {
           <label className="block text-sm font-medium text-gray-700 mb-1">
             최대 인원 <span className="text-postech-red">*</span>
           </label>
-          <select name="max_people" required defaultValue="4" className={`${inputClass} bg-white`}>
-            {Array.from({ length: 19 }, (_, i) => i + 2).map((n) => (
-              <option key={n} value={n}>{n}명</option>
-            ))}
-          </select>
+          <input name="max_people" type="number" required defaultValue={4} min={2} max={190} className={inputClass} />
           <p className="text-xs text-postech-gray mt-1">호스트 본인 포함 인원이에요.</p>
         </div>
 

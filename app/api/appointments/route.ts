@@ -27,9 +27,9 @@ export async function POST(req: NextRequest) {
     }
 
     const maxPeopleNum = parseInt(max_people, 10);
-    if (maxPeopleNum < 2 || maxPeopleNum > 20) {
+    if (maxPeopleNum < 2 || maxPeopleNum > 190) {
       return NextResponse.json(
-        { error: "최대 인원은 2~20명 사이여야 합니다" },
+        { error: "최대 인원은 2~190명 사이여야 합니다" },
         { status: 400 }
       );
     }
