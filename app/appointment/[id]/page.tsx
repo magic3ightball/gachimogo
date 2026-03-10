@@ -31,7 +31,7 @@ export default async function AppointmentDetailPage({
     minute: "2-digit",
   });
 
-  const statusLabel = { OPEN: "모집중", FULL: "마감", PAST: "종료" };
+  const statusLabel = { OPEN: "자리가 남았어요", FULL: "자리가 찼어요", PAST: "지난 약속" };
   const statusStyles = {
     OPEN: "bg-green-100 text-green-700",
     FULL: "bg-red-100 text-red-700",
@@ -53,7 +53,7 @@ export default async function AppointmentDetailPage({
         {/* Header */}
         <div className="flex items-start justify-between gap-2 mb-4">
           <h1 className="text-xl font-bold text-gray-900">{appointment.title}</h1>
-          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full shrink-0 ${statusStyles[status]}`}>
+          <span className={`text-xs font-semibold px-2 py-0.5 rounded-md shrink-0 ${statusStyles[status]}`}>
             {statusLabel[status]}
           </span>
         </div>

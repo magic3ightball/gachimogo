@@ -3,14 +3,14 @@ import type { Appointment } from "@/lib/types";
 import { getAppointmentStatus } from "@/lib/types";
 
 function StatusBadge({ status }: { status: "OPEN" | "FULL" | "PAST" }) {
-  const label = { OPEN: "모집중", FULL: "마감", PAST: "종료" };
+  const label = { OPEN: "자리가 남았어요", FULL: "자리가 찼어요", PAST: "지난 약속" };
   const styles = {
     OPEN: "bg-green-100 text-green-700",
     FULL: "bg-red-100 text-red-700",
     PAST: "bg-gray-100 text-postech-gray",
   };
   return (
-    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${styles[status]}`}>
+    <span className={`text-xs font-semibold px-2 py-0.5 rounded-md shrink-0 ${styles[status]}`}>
       {label[status]}
     </span>
   );
