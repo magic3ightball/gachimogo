@@ -25,10 +25,12 @@ export default function AppointmentCard({ appointment }: { appointment: Appointm
     month: "short",
     day: "numeric",
     weekday: "short",
+    timeZone: "Asia/Seoul",
   });
   const timeStr = dateObj.toLocaleTimeString("ko-KR", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "Asia/Seoul",
   });
 
   return (

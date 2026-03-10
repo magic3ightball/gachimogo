@@ -25,10 +25,12 @@ export default async function AppointmentDetailPage({
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "Asia/Seoul",
   });
   const timeStr = dateObj.toLocaleTimeString("ko-KR", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "Asia/Seoul",
   });
 
   const statusLabel = { OPEN: "자리가 남았어요", FULL: "자리가 찼어요", PAST: "지난 약속" };
