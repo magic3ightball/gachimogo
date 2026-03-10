@@ -21,6 +21,7 @@ export default async function HomePage() {
     <div>
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900">오늘 같이 밥 먹을 사람을 찾아보세요</h1>
+        <p className="text-sm text-postech-gray mt-1">꼭 밥이 아니어도 괜찮아요. 카페, 산책, 스터디도 환영이에요 ☕</p>
       </div>
 
       <a
